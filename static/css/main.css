@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #087;
+}
+
+/*
+ * Formatting the header area
+ */
+
+header {
+  background-color: dimgrey;
+  height: 150px;
+  width: 1200px;
+  margin: 10px auto;
+  opacity: .9;
+  border-radius: 6px;
+ /* margin-bottom: 10px;*/
+}
+
+header h1.logo {
+  margin-top: 5px;
+  font-size: 5rem;
+  color: floralwhite;
+  text-transform: uppercase;
+  float: left;
+  padding-left: 15px;
+}
+
+header h4.logo {
+  margin-top: 15px;
+  font-size:1rem;
+  color floralwhite;
+  text-transform: uppercase;
+  float:left;
+}
+
+header h1.logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*
+ * Center the body content
+ */
+
+.container {
+  width: 1200px;
+  margin: 10px auto;
+ 
+}
+
+div.home {
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+div.about {
+  padding: 10px 0 30px 0;
+  background-color: #E6E6FA;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+div.home h1 {
+  font-size:30px;
+  padding-left: 18px;
+}
+
+div.home p {
+  font-size:25px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+h3 {
+  font-size: 1.7em;
+  font-weight: 100;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: -1px;
+  color: #999;
+}
+
+.menu {
+  float: right;
+  margin-top: 15px;
+  padding-right: 15px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu li + li {
+  margin-left: 35px;
+}
+
+.menu li a {
+  color: black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* SEVERLESS PAGE CUSTOM CSS */
+#article li {
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+#code {
+  font-size: 15px;
+  color: black;
+  font-family: "Courier New", Courier, monospace
+} 
+/* SEVERLESS SQS SNS PAGE CSS */
+.serverless_autoscaling_sqs_sns p {
+  font-size: 20px;
+}
+/* DEVOPS ELASTICSEARCH PAGE CSS */
+#article p {
+  font-size: 20px;
+}
+/* ABOUT ME INFOGRAPHIC CSS*/
+.infographic {
+  text-align: center; 
+}
+/* DEVOPS BASH SCRIPTS CSS */
+#bashcode {
+  font-size: 15px;
+  border: 1px solid black;
+  width: 1125px;
+  height: 300px;
+  overflow: scroll;
+  color: black;
+}
+/* LINUX USER GROUP MGMT CSS */
+.tablecontent {
+  font-size: 15px;
+}
+
+div.home h4 {
+  font-size:15px;
+}
+/* FOOTER COPYRIGHT CSS*/
+.copyrightFooter {
+  padding-right: 720px;
+}

@@ -1,0 +1,17 @@
+{%include 'layout.html'%}
+<div class="linux">
+  <section class="background--skyBlue section">
+      <h2 class="color--cloud margin--none section__text--centered">
+        Linux Projects
+      </h2>
+  </section>
+   <div id="article" class="home container">
+      <div>
+	<ul>
+	  <li><a href="{{url_for('linux_bash_scripts')}}">Bash Scripts</a></li>
+	  <li><a href="{{url_for('linux_user_group_mgmt')}}">Users and Groups Management Project</a></li>
+	</ul>
+      </div>
+     </div>
+</div>
+{%include 'footer.html'%}

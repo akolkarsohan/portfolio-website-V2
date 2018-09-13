@@ -1,0 +1,67 @@
+{%include 'layout.html' %}
+<div class="serverless">
+   <div id="article">
+    <section class="background--skyBlue section">
+      <h2 class="color--cloud margin--none section__text--centered">
+        Serverless Projects
+      </h2>
+    </section>
+
+      <div class="container home">
+	<ul>
+	  <li><a href="http://ilovecoffee.akolkarsohan.com/">ILOVECOFFEE - Serverless Website</a></li><br>
+	  <li>AWS Lambda - Starting EC2 Instances and send SNS notification</li><br>
+	    <div id=code>
+		<pre>
+############################################################################
+# Purpose: This Lambda function fulfills following steps:                  #
+#          1) Start given instances at 9 am IST using CloudWatch trigger   #
+#          2) Sends Public IP of the instance to SNS subscribers via email #
+# Author: Sohan Akolkar                                                    #
+# History: Concept envisioned and implemented in Jun 2017                  #
+# Project : Used for development EC2 instances                             #
+############################################################################
+
+import boto3
+import json
+
+# instance_id and region declaration
+instance_id = 'i-097111111111111'
+region = 'us-east-1'
+
+
+
+def lambda_handler(event, context):
+    
+    # Start given instances
+    ec2 = boto3.client('ec2', region_name=region)
+    ec2.start_instances(InstanceIds=[instance_id])
+   
+    # Get Public IP of the instances
+    ec2_describe = boto3.client('ec2')
+    instances = ec2_describe.describe_instances(InstanceIds=[instance_id])
+    get_public_ip = instances['Reservations'][0]['Instances'][0]['PublicIpAddress']
+       
+        
+    
+
+    # Public SNS message with topic
+    sns = boto3.client(service_name="sns")
+    topicArn = 'arn:aws:sns:us-east-1:accountNumber:Test-SNS-Topic'
+    sns.publish(
+        TopicArn = topicArn,
+        Message = "Public IP Address of EC2 instance is : " + str(get_public_ip)
+    )
+    return
+    
+		</pre>
+	    </div><br>
+	<li>
+          <!--<a href="autoscaling-sqs-sns.html">AutoScaling Based Off SQS Message Queue Size</a>-->
+	<a href="{{url_for('serverless_autoscaling_sqs_sns')}}">AutoScaling Based Off SQS Message Queue Size</a>
+        </li>
+	</ul>
+      </div>
+     </div>
+</div>
+{%include 'footer.html' %}    

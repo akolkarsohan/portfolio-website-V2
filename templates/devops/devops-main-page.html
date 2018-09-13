@@ -1,0 +1,20 @@
+{%include 'layout.html'%}
+<div class="devops">
+ <section class="background--skyBlue section">
+      <h2 class="color--cloud margin--none section__text--centered">
+        DevOps Projects
+      </h2>
+    </section>
+
+    <div id="article">
+        <div class="home container">
+	  <li><a href="https://github.com/akolkarsohan/portfolio-website-repo">Dockerizing HTML website using Apache in AWS</li>
+	  <li><a href="{{url_for('devops_elasticsearch')}}">Searching movie details using Elasticsearch</li>
+	  <!--<li><a href="https://github.com/akolkarsohan/ansible/tree/master/webDBStack">Creating LAMP Stack using Ansible</li>-->
+          <li><a href="https://github.com/akolkarsohan/ansible/tree/master/aws-infra-setup">Automate provisioning of entire highly avialable AWS infrastructure consisting webservers and databases using Ansible</li>
+          <li><a href="http://cloudblog.akolkarsohan.com/blog/index.php/2018/07/22/kubernetes-cluster-installation-in-aws/">Kubernetes Cluster Installation in AWS</a></li>
+	</ul>
+      </div>
+     </div>
+</div>    
+{%include 'footer.html'%}

@@ -1,0 +1,34 @@
+{%include 'layout.html'%}
+<div class="linux_bash_scripts">
+<section class="background--skyBlue section">
+      <h2 class="color--cloud margin--none section__text--centered">
+        Linux Projects
+      </h2>
+  </section>
+
+      <div id="article" class="home container">
+      <h1>Linux Projects - Bash Scripts</h1>
+      <div>
+        <ul>
+          <li>Stop AWS instances in all region</li><br>
+	    <div id="bashcode">
+		<pre>
+#!/bin/bash
+  
+profile=$1
+for region in `aws ec2 describe-regions --output text --profile $profile  | cut -f3`
+do
+        aws_list_instances="aws ec2 describe-instances --query  "Reservations[].Instances[].[Placement.AvailabilityZone,State.Name,InstanceId,NetworkInterfaces[0].Association.PublicIp,KeyName,Tags[0].Value]" --output table --profile $1"
+        get_running_instances=$($aws_list_instances --region "$region" --profile $profile | grep running | awk '{print $5}')
+
+        aws ec2 stop-instances --instance-id $get_running_instances --profile $profile --region $region
+        echo -e "\nStopping Instances in region: '$region'..."
+        $aws_list_instances --profile $1 --region $region
+done
+		</pre>
+	    </div>
+        </ul>
+      </div>
+     </div>
+</div>
+{%include 'footer.html'%}
